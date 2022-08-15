@@ -1,0 +1,3 @@
+---
+slug: "/reference/face-detector"
+---
