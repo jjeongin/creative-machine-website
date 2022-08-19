@@ -1,16 +1,19 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import {mainLogo} from "../images/icon.png"
-import {GitHubLogo} from "../images/github.png"
+import { StaticImage } from 'gatsby-plugin-image'
 import {
     container,
-    navMainLogo,
+    navLogo,
     navGithubLogo,
+    navContainer,
     navLinks,
     navLinkItem,
     navLinkText,
+    referenceSideBar,
 } from './layout.module.css'
-import { StaticImage } from 'gatsby-plugin-image'
+import sideBar from './SideBar'
+// import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+// deckDeckGoHighlightElement();
 
 const Layout = ({ children }) => {
     // get website title from gatsby-config.js
@@ -29,23 +32,35 @@ const Layout = ({ children }) => {
         <title>{data.site.siteMetadata.title}</title>
         <header>
           <Link to="/">
-            <img className={navMainLogo} src={'../images/icon.png'} alt="Creative Machine Logo"></img>
+            <StaticImage
+              className={navLogo}
+              src='../images/creative-machine-logo.svg'
+              alt='Creative Machine Logo'
+            />
           </Link>
 
-          <nav>
-            <ul className={navLinks}>
-              <li className={navLinkItem}>
-                <Link to="/reference" className={navLinkText}>Reference</Link>
-              </li>
-              <li className={navLinkItem}>
-                <Link to="/about" className={navLinkText}>About</Link>
-              </li>
-            </ul>
-          </nav>
+            <nav className={navContainer}>
+              <ul className={navLinks}>
+                <li className={navLinkItem}>
+                  <Link to="/download" className={navLinkText}>Download</Link>
+                </li>
+                <li className={navLinkItem}>
+                  <Link to="/reference/tutorial" className={navLinkText}>Reference</Link>
+                </li>
+                <li className={navLinkItem}>
+                  <Link to="/about" className={navLinkText}>About</Link>
+                </li>
+              </ul>
 
-          <a href="https://github.com/jjeongin/ml4processing">
-            <img className={navGithubLogo} src={'/github.png'} alt="GitHub Logo"></img>
-          </a>
+              <a href="https://github.com/jjeongin/ml4processing">
+              <StaticImage
+                className={navGithubLogo}
+                src='../images/GitHub-Mark-64px.png'
+                alt='GitHub Logo'
+              />
+            </a>
+            </nav>
+        
         </header>
         
 
@@ -68,11 +83,19 @@ const Layout = ({ children }) => {
           </div>
         </nav> */}
 
+        <sideBar/>
         <main>
           {children}
         </main>
+
+        <footer>
+          <p>Contact</p>
+          <a href="https://github.com/jjeongin/ml4processing">GitHub</a>
+          <a href="">Email</a>
+          <p>Creative Machine is developed by Jeongin Lee as a Google Summer of Code 2022 project under the guidance of Andres Colubri and Daniel Shiffman.</p>
+        </footer>
       </div>
     )
   }
   
-  export default Layout
+export default Layout

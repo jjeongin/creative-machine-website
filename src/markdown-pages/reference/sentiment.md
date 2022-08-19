@@ -1,5 +1,6 @@
 ---
 slug: "/reference/sentiment"
+templateKey: "reference-page"
 ---
 
 # Sentiment
@@ -8,7 +9,7 @@ Analyze sentiment (Negative and Positive) of the provided sentence.
 <img src="../data/sentiment_demo.png" width="500">
 
 ## Quick Start
-```
+```java
 // create a Sentiment analysis model
 Sentiment sentiment = new new Sentiment(this, "distilbert");
 
@@ -21,14 +22,14 @@ MLObject[] output = sentiment.predict(input);
 
 ## Usage
 ### Initialize
-```
+```java
 Sentiment sentiment = new new Sentiment(this, modelNameOrURL);
 ```
 #### Parameters
 String modelNameOrURL: (required) Can be a model name of built-in models ("distilbert") or a remote url/file path to a parent directory containing TensorFlow saved_model folder
 ### Methods
 predict(String input): Runs sentiment analysis on input String and returns an array of [MLObject]() with two sentiment labels (Negative and Positive) and confidence scores.
-```
+```java
 String input = "Machine Learning is fun.";
 
 // analyze sentiment

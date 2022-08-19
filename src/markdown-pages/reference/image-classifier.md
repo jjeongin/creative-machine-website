@@ -1,5 +1,6 @@
 ---
 slug: "/reference/image-classifier"
+templateKey: "reference-page"
 ---
 
 # Image Classifier
@@ -8,7 +9,7 @@ Classify image
 <img src="../data/image_classifier_demo.png" width="500">
 
 ## Quick Start
-```
+```java
 // create an Image Classifier
 ImageClassifier classifier = new ImageClassifier(this, "MobileNet");
 
@@ -21,14 +22,14 @@ MLObject[] output = classifier.classify(img);
 
 ## Usage
 ### Initialize
-```
+```java
 ImageClassifier classifier = new ImageClassifier(this, modelNameorURL);
 ```
 #### Parameters
 String modelNameOrURL: (required) Can be a model name of built-in models ("MobileNet" or "Darknet") or a remote url/file path to a parent directory containing TensorFlow saved_model folder
 ### Methods
 classify(PImage image): Runs image classification on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject]() with image label and confidence score.
-```
+```java
 PImage img = loadImage("data/bird.jpeg");
 
 // classify image

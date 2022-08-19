@@ -1,9 +1,6 @@
 html, body {
     margin: 0;
     height: 100%;
-    /* display: flex;
-    flex-direction: column;
-    background-color: pink; */
 }
 
 .container {
@@ -16,6 +13,7 @@ html, body {
     flex-direction: column;
 }
 
+/* header */
 header {
     top: 0;
     left: 0;
@@ -23,21 +21,22 @@ header {
     height: 60px;
     position: fixed;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    background-color: aquamarine;
-    overflow: hidden;
+    z-index: 10;
+    background-color: white;
 }
 
-nav {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    /* background-color: pink; */
+.nav-container {
+    display: flex;
+    align-items: center;
+    right: 20px;
+    position: relative;
 }
 
-.nav-main-logo {
-    width: 30px;
+.nav-logo {
+    left: 20px;
+    width: 200px;
 }
 
 .nav-github-logo {
@@ -46,10 +45,15 @@ nav {
 
 nav ul {
     list-style: none;
+    white-space: nowrap;
 }
 
 nav ul li {
     display: inline-block;
+}
+
+.nav-links {
+    padding: 0px 20px;
 }
 
 .nav-link-text {
@@ -59,5 +63,102 @@ nav ul li {
 }
 
 main {
-    padding: 60px;
+    padding: 60px; /* header size */
+    display: flex;
+    flex-direction: column;
+}
+
+/* footer */
+footer {
+    bottom: 0;
+    right: 0;
+    background-color: aquamarine;
+    width: 100%;
+}
+
+/* home page */
+.home-intro {
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+}
+
+.home-examples {
+    /* background-color: pink; */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-examples-heading {
+    width: 100%;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+.home-examples-item-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.home-examples-item {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* background-color: blueviolet; */
+}
+
+.home-examples-item-image {
+    height: 300px;
+    border-radius: 10px;
+}
+
+.home-examples-item-description {
+    
+}
+
+.home-download {
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-download-button {
+    width: 200px;
+    height: 100px;
+    font-size: medium;
+    border: 0;
+    border-radius: 30px;
+}
+
+.home-code-examples {
+
+}
+
+/* reference page */
+.reference-container {
+    display: flex;
+    background-color: aqua;
+}
+
+.reference-side-bar {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.reference-content {
+    width: 70%;
+    right: 0;
 }

@@ -2,7 +2,8 @@ const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
-    const referenceTemplate = path.resolve(`src/templates/reference.js`)
+    // const downloadPageTemplate = path.resolve(`src/templates/download-page.js`)
+    // const referencePageTemplate = path.resolve(`src/templates/reference-page.js`)
 
     return graphql(`
     {
@@ -12,6 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
             id
             frontmatter {
               slug
+              templateKey
             }
           }
         }
@@ -25,10 +27,11 @@ exports.createPages = async ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.slug,
-        component: referenceTemplate,
+        component: path.resolve(
+            `src/templates/${String(node.frontmatter.templateKey)}.js`
+          ),
         context: {
-          // additional data can be passed via context
-          slug: node.frontmatter.slug,
+            slug: node.frontmatter.slug
         },
       })
     })

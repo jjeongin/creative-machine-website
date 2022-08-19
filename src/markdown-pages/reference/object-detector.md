@@ -1,5 +1,6 @@
 ---
 slug: "/reference/object-detector"
+templateKey: "reference-page"
 ---
 
 # Object Detector
@@ -8,7 +9,7 @@ Detect objects from a PImage.
 <img src="../data/object_detector_demo.png" width="500">
 
 ## Quick Start
-```
+```java
 // create an Object Detector
 ObjectDetector detector = new ObjectDetector(this, "cocossd");
 
@@ -21,14 +22,14 @@ MLObject[] output = detector.detect(img);
 
 ## Usage
 ### Initialize
-```
+```java
 ObjectDetector detector = new ObjectDetector(this, modelNameorURL);
 ```
 #### Parameters
 String modelNameOrURL: (required) Can be a model name of built-in models ("openimages_ssd", "cocossd", or "yolo") or a remote url/file path to a parent directory containing TensorFlow saved_model folder
 ### Methods
 detect(PImage image, Boolean saveBoundingBoxImage, String fileName): Runs object detection on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject](). (optional) If saveBoundingBoxImage is true, it also saves bounding box image with the specified filename.
-```
+```java
 PImage img = loadImage("data/dog_bike_car.jpeg"); // input image
 
 // run object detection only
