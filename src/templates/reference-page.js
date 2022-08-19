@@ -1,7 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import sideBar from "../components/sideBar"
+import SideBar from "../components/SideBar"
+import {
+  referenceContainer,
+  referenceContent
+} from '../components/layout.module.css'
 
 
 export default function referenceTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
@@ -10,10 +14,12 @@ export default function referenceTemplate({ data, }) { // this prop will be inje
 
   return (
     <Layout>
-      <sideBar/>
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className={referenceContainer}>
+        <SideBar/>
+        <div className={referenceContent}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
     </Layout>
   )
 }

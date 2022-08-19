@@ -6,7 +6,7 @@ templateKey: "reference-page"
 # Image Classifier
 Classify image
 
-<img src="../data/image_classifier_demo.png" width="500">
+![alt text](../images/image_classifier_demo.png)
 
 ## Quick Start
 ```java

@@ -6,7 +6,7 @@ templateKey: "reference-page"
 # Object Detector
 Detect objects from a PImage.
 
-<img src="../data/object_detector_demo.png" width="500">
+![alt text](../images/object_detector_demo.png)
 
 ## Quick Start
 ```java

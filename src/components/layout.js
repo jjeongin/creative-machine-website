@@ -9,9 +9,7 @@ import {
     navLinks,
     navLinkItem,
     navLinkText,
-    referenceSideBar,
 } from './layout.module.css'
-import sideBar from './SideBar'
 // import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 // deckDeckGoHighlightElement();
 
@@ -82,8 +80,7 @@ const Layout = ({ children }) => {
             </Link>
           </div>
         </nav> */}
-
-        <sideBar/>
+        
         <main>
           {children}
         </main>

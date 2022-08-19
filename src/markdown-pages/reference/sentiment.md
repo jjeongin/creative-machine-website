@@ -6,7 +6,7 @@ templateKey: "reference-page"
 # Sentiment
 Analyze sentiment (Negative and Positive) of the provided sentence.
 
-<img src="../data/sentiment_demo.png" width="500">
+![alt text](../images/image_classifier_demo.png)
 
 ## Quick Start
 ```java

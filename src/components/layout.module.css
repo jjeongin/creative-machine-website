@@ -13,6 +13,18 @@ html, body {
     flex-direction: column;
 }
 
+h1, h2, h3 {
+    font-weight: normal; /* undo bold for all headings */
+}
+
+a {
+    text-decoration: none; /* remove underline for all links */
+}
+
+ul {
+    list-style: none; /* remove list bullet point */ 
+}
+
 /* header */
 header {
     top: 0;
@@ -44,7 +56,6 @@ header {
 }
 
 nav ul {
-    list-style: none;
     white-space: nowrap;
 }
 
@@ -62,10 +73,13 @@ nav ul li {
     padding: 0px 20px;
 }
 
+/* main body */
 main {
-    padding: 60px; /* header size */
+    padding-top: 60px; /* header size */
+    /* padding-bottom: 50px; */
     display: flex;
     flex-direction: column;
+    z-index: 0;
 }
 
 /* footer */
@@ -74,8 +88,11 @@ footer {
     right: 0;
     background-color: aquamarine;
     width: 100%;
+    height: 120px;
+    z-index: 0;
 }
 
+/* ------------------------------------------------- */
 /* home page */
 .home-intro {
     /* background-color: yellow; */
@@ -146,19 +163,49 @@ footer {
 
 }
 
+/* ------------------------------------------------- */
 /* reference page */
 .reference-container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    background-color: aqua;
+    /* background-color: pink; */
 }
 
 .reference-side-bar {
-    width: 30%;
+    width: 180px; /* side bar width */
+    height: 100%;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+    /* background-color: skyblue; */
+    position: fixed;
+    margin: 0;
+    /* padding: 0; */
+    padding-left: 20px;
+    padding-top: 11px;
+}
+
+.side-bar-heading {
+    font-size: 1.5rem;
+}
+
+.side-bar-sub-heading {
+    font-size: 1.2rem;
+}
+
+.side-bar-index {
+    
+}
+
+.side-bar-index-link {
+    font-size: 1.2rem;
+    color: black;
 }
 
 .reference-content {
-    width: 70%;
-    right: 0;
+    margin-left: 200px; /* side bar width */
+    height: 100%;
+    overflow: auto;
+    padding: 0px 30px;
 }
