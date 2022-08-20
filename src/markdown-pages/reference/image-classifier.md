@@ -4,7 +4,7 @@ templateKey: "reference-page"
 ---
 
 # Image Classifier
-Classify image
+Classify an object from a [PImage](https://processing.org/reference/PImage.html).
 
 ![alt text](../images/image_classifier_demo.png)
 
@@ -27,8 +27,11 @@ ImageClassifier classifier = new ImageClassifier(this, modelNameorURL);
 ```
 #### Parameters
 String modelNameOrURL: (required) Can be a model name of built-in models ("MobileNet" or "Darknet") or a remote url/file path to a parent directory containing TensorFlow saved_model folder
+
 ### Methods
-classify(PImage image): Runs image classification on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject]() with image label and confidence score.
+#### .classify(PImage image)
+
+Runs image classification on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject]() with image label and confidence score.
 ```java
 PImage img = loadImage("data/bird.jpeg");
 
@@ -38,10 +41,11 @@ MLObject[] output = classifier.classify(img);
 // print the label with the highest confidence (by default, output contains top 5 labels with the highest confidence scores)
 println("Label: " + output[0].getLabel() + ", Confidence: " + output[0].getConfidence());
 ```
-***Input***
+
+*Parameters*
 - PImage image: (required) Image with an object to be classified.
 
-***Output***
+*Returns*
 - MLObject[]: List of [MLObject](). Contains top K (default K = 5) labels and confidence scores.
 
 ## Examples

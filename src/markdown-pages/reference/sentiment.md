@@ -6,12 +6,12 @@ templateKey: "reference-page"
 # Sentiment
 Analyze sentiment (Negative and Positive) of the provided sentence.
 
-![alt text](../images/image_classifier_demo.png)
+![alt text](../images/sentiment_demo.png)
 
 ## Quick Start
 ```java
-// create a Sentiment analysis model
-Sentiment sentiment = new new Sentiment(this, "distilbert");
+// create a Sentiment Analysis model
+Sentiment sentiment = new Sentiment(this, "distilbert");
 
 // define input sentence
 String input = "Machine Learning is fun.";
@@ -23,12 +23,16 @@ MLObject[] output = sentiment.predict(input);
 ## Usage
 ### Initialize
 ```java
-Sentiment sentiment = new new Sentiment(this, modelNameOrURL);
+Sentiment sentiment = new Sentiment(this, modelNameOrURL);
 ```
 #### Parameters
-String modelNameOrURL: (required) Can be a model name of built-in models ("distilbert") or a remote url/file path to a parent directory containing TensorFlow saved_model folder
+String modelNameOrURL: (required) Can be a model name of built-in models ("distilbert") or a remote URL/file path to a parent directory containing TensorFlow saved_model folder.
+- Built-in model options: "distilbert"
+
 ### Methods
-predict(String input): Runs sentiment analysis on input String and returns an array of [MLObject]() with two sentiment labels (Negative and Positive) and confidence scores.
+#### .predict(String input)
+
+Runs sentiment analysis on input String and returns an array of [MLObject]() with two sentiment labels (Negative and Positive) and confidence scores.
 ```java
 String input = "Machine Learning is fun.";
 
@@ -41,11 +45,11 @@ println("Sentiment: " + output[0].getLabel() + ", Confidence: " + output[0].getC
 // print Positive score (0 to 1)
 println("Sentiment: " + output[1].getLabel() + ", Confidence: " + output[1].getConfidence());
 ```
-***Input***
+*Parameters*
 - String input: (required) String to analyze the sentiment.
 
-***Output***
-- MLObject[]: List of [MLObject](). Contains 2 labels (Negative and Positive) with confidence scores (from 0 to 1). 
+*Returns*
+- MLObject[]: An array of size 2 containing [MLObject](). Each element in the array is **Negative and Positive** label with its confidence score (from 0 to 1). Confidence is higher if each sentiment is stronger.
 
 ## Examples
 [SentimentExample](https://github.com/jjeongin/ml4processing/tree/master/examples/SentimentExample)
