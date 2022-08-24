@@ -12,6 +12,9 @@ const SideBar = () => {
     return (
         <ul className={referenceSideBar}>
             <h1 className={sideBarHeading}>Reference</h1>
+            <li className={sideBarIndex}>
+                <Link to="/reference/tutorial" className={sideBarIndexLink}>- Tutorial</Link>
+            </li>
 
             <h2 className={sideBarSubHeading}>Models</h2>
             <h3 className={sideBarIndex}>Computer Vision</h3>
