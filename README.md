@@ -1,6 +1,6 @@
 # Machine Leanrning for Processing Website
 
-## How to run
+## How to develop this website
 * Clone this repository.
 
 ```git clone https://github.com/jjeongin/ml4processing-website.git```
