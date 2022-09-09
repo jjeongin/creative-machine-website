@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 html, body {
     margin: 0;
     height: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 .container {
@@ -9,7 +13,6 @@ html, body {
     width: 100%;
     min-height: 100vh;
     position: relative; /* stick footer on bottom */
-    font-family: sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -51,7 +54,7 @@ header {
 
 .nav-logo {
     left: 20px;
-    width: 200px;
+    width: 200px; /* 200px for regular, */
 }
 
 .nav-github-logo {
@@ -80,8 +83,6 @@ nav ul li {
 main {
     padding-top: 60px; /* header size */
     padding-bottom: 120px; /* footer size */
-    padding-left: 40px;
-    padding-right: 40px;
     display: flex;
     flex-direction: column;
     z-index: 0;
@@ -90,7 +91,8 @@ main {
 /* footer */
 footer {
     bottom: 0;
-    background-color: orange;
+    background-color: #8684FF;
+    color: white;
     width: 100%;
     height: 120px;
     position: absolute;
@@ -99,27 +101,48 @@ footer {
 /* ------------------------------------------------- */
 /* home page */
 .home-intro {
-    /* background-color: yellow; */
+    display: flex;
+    width: 100%;
+    background: rgb(175,148,234);
+    background: linear-gradient(90deg, rgba(175,148,234,0) 0%, rgba(134,132,255,1) 91%);
+    height: 100vh;
+}
+
+.home-intro-logo {
+    width: 300px;
+}
+
+.home-intro-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 90vh;
+    color: #6360ff;
+    width: 100vw;
+    font-weight: 900px;
+}
+
+.home-intro-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #8684FF; purple: 8684FF, blue: 2663FF */
+    width: 50vw;
 }
 
 .home-examples {
-    /* background-color: pink; */
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .home-examples-heading {
     width: 100%;
     text-align: center;
-    /* background-color: aqua; */
 }
 
 .home-examples-item-container {
@@ -136,7 +159,6 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* background-color: blueviolet; */
 }
 
 .home-examples-item-image {
@@ -149,10 +171,12 @@ footer {
 }
 
 .home-download {
-    /* background-color: skyblue; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-color: #c2c1ff;
 }
 
 .home-download-button {
@@ -161,10 +185,17 @@ footer {
     font-size: medium;
     border: 0;
     border-radius: 30px;
+    background-color: #ffffff;
+    color:#c2c1ff;
 }
 
 .home-code-examples {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 70vh;
 }
 
 /* ------------------------------------------------- */
@@ -173,6 +204,8 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
     /* background-color: pink; */
 }
 
@@ -210,4 +243,16 @@ footer {
     height: 100%;
     overflow: auto;
     padding: 0px 30px;
+}
+
+/* download page */
+.download-content {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* download page */
+.about-content {
+    padding-left: 40px;
+    padding-right: 40px;
 }

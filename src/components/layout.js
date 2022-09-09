@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           <Link to="/">
             <StaticImage
               className={navLogo}
-              src='../images/creative-machine-logo.svg'
+              src='../images/creative-machine-logo-purple.svg'
               alt='Creative Machine Logo'
             />
           </Link>

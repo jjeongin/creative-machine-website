@@ -3,7 +3,7 @@ slug: "/"
 templateKey: "home-page"
 intro:
     mainText: "Welcome to Creative Machine!"
-    subText: "Get Creative with Machine Learning in Processing."
+    subText: "Get Creative with Machine Learning in Processing!"
 examples:
 - image: "./images/object_detector_demo.png"
   altText: "A picture of a dog sitting next to a bicycle with bounding boxes that have labels of each object"

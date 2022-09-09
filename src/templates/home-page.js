@@ -3,8 +3,13 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
+  homeContainer,
   homeIntro,
+  homeIntroLogo,
+  homeIntroLeft,
+  homeIntroRight,
   homeExamples,
+  homeExamplesContainer,
   homeExamplesHeading,
   homeExamplesItemContainer,
   homeExamplesItem,
@@ -25,11 +30,23 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
 
   return (
     <Layout>
-      <section className={homeIntro}>
-          <h1>{frontmatter.intro.mainText}</h1>
-          <h2>{frontmatter.intro.subText}</h2>
-      </section>
-      <section className={homeExamples}>
+      <div className={homeContainer}>
+        {/* Section: Introduction & Welcome Message */}
+        <section className={homeIntro}>
+          <div className={homeIntroLeft}>
+            {/* <h1>{frontmatter.intro.mainText}</h1> */}
+            <h2>{frontmatter.intro.subText}</h2>
+          </div>
+          <div className={homeIntroRight}>
+            <StaticImage
+                className={homeIntroLogo}
+                src='../images/creative-machine-logo-white-thick.svg'
+                alt='Creative Machine Logo'
+              />
+          </div>
+        </section>
+        {/* Section: Examples */}
+        <section className={homeExamples}>
           <h1 className={homeExamplesHeading}>Examples</h1>
           <div className={homeExamplesItemContainer}>
             {frontmatter.examples.map(e => (
@@ -43,24 +60,25 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
               </div>
             ))}
           </div>
-      </section>
-      {/* Section: Download Button */}
-      <section className={homeDownload}>
-          <h1>{frontmatter.download.mainText}</h1>
-          <a href="https://github.com/jjeongin/ml4processing">
-            <button className={homeDownloadButton}>{frontmatter.download.subText}</button>
-          </a>
-      </section>
-      {/* Section: Example Code Snippet */}
-      <section
-        className={homeCodeExamples}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-      <section className={homeAcknowledgements}>
-          {/* <GatsbyImage
-            image={frontmatter.acknowledgements.gsocLogo.childImageSharp.gatsbyImageData}
-          /> */}
-      </section>
+        </section>
+        {/* Section: Download Button */}
+        <section className={homeDownload}>
+            <h1>{frontmatter.download.mainText}</h1>
+            <a href="https://github.com/jjeongin/ml4processing">
+              <button className={homeDownloadButton}>{frontmatter.download.subText}</button>
+            </a>
+        </section>
+        {/* Section: Example Code Snippet */}
+        <section
+          className={homeCodeExamples}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+        <section className={homeAcknowledgements}>
+            {/* <GatsbyImage
+              image={frontmatter.acknowledgements.gsocLogo.childImageSharp.gatsbyImageData}
+            /> */}
+        </section>
+      </div>
     </Layout>
   )
 }
