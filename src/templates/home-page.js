@@ -40,7 +40,7 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
           <div className={homeIntroRight}>
             <StaticImage
                 className={homeIntroLogo}
-                src='../images/creative-machine-logo-white-thick.svg'
+                src='../images/cm-kunika-logo-horizontal-white.svg'
                 alt='Creative Machine Logo'
               />
           </div>
