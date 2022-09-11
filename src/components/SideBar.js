@@ -15,38 +15,40 @@ const SideBar = () => {
             <li className={sideBarIndex}>
                 <Link to="/reference/tutorial" className={sideBarIndexLink}>- Tutorial</Link>
             </li>
-
             <h2 className={sideBarSubHeading}>Models</h2>
             <h3 className={sideBarIndex}>Computer Vision</h3>
             <li className={sideBarIndex}>
-                <Link to="/reference/object-detector" className={sideBarIndexLink}>- Object Detector</Link>
+                <Link to="/reference/models/object-detector" className={sideBarIndexLink}>- Object Detector</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/image-classifier" className={sideBarIndexLink}>- Image Classifier</Link>
+                <Link to="/reference/models/image-classifier" className={sideBarIndexLink}>- Image Classifier</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/pose-net" className={sideBarIndexLink}>- Pose Net</Link>
+                <Link to="/reference/models/pose-detector" className={sideBarIndexLink}>- Pose Detector</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/face-detector" className={sideBarIndexLink}>- Face Detector</Link>
+                <Link to="/reference/models/face-detector" className={sideBarIndexLink}>- Face Detector</Link>
             </li>
             <h3 className={sideBarSubHeading}>Natural Language Processing</h3>
             <li className={sideBarIndex}>
-                <Link to="/reference/sentiment" className={sideBarIndexLink}>- Sentiment</Link>
+                <Link to="/reference/models/sentiment-analyzer" className={sideBarIndexLink}>- Sentiment Analyzer</Link>
             </li>
 
             <h2 className={sideBarSubHeading}>Objects</h2>
             <li className={sideBarIndex}>
-                <Link to="/reference/mlobject" className={sideBarIndexLink}>- MLObject</Link>
+                <Link to="/reference/objects/ml-object" className={sideBarIndexLink}>- MLObject</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/mlkeypoint" className={sideBarIndexLink}>- MLKeyPoint</Link>
+                <Link to="/reference/objects/ml-label" className={sideBarIndexLink}>- MLLabel</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/mlpose" className={sideBarIndexLink}>- MLPose</Link>
+                <Link to="/reference/objects/ml-keypoint" className={sideBarIndexLink}>- MLKeyPoint</Link>
             </li>
             <li className={sideBarIndex}>
-                <Link to="/reference/mlface" className={sideBarIndexLink}>- MLFace</Link>
+                <Link to="/reference/objects/ml-pose" className={sideBarIndexLink}>- MLPose</Link>
+            </li>
+            <li className={sideBarIndex}>
+                <Link to="/reference/objects/ml-face" className={sideBarIndexLink}>- MLFace</Link>
             </li>
         </ul>
     )
