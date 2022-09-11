@@ -2,7 +2,7 @@
 slug: "/"
 templateKey: "home-page"
 intro:
-    mainText: "Welcome to Creative Machine!"
+    mainText: "Welcome to Creative Machine."
     subText: "Get Creative with Machine Learning in Processing!"
 examples:
 - image: "./images/object_detector_demo.png"
@@ -11,7 +11,7 @@ examples:
 - image: "./images/image_classifier_demo.png"
   altText: "A picture of a bird with its academic name and confidence score"
   description: "Image classificaiton of 00 different objects"
-- image: "./images/pose_net_demo.png"
+- image: "./images/pose_detector_demo.png"
   altText: "A soccer player running with joints marked as circles"
   description: "Build interactive app with real-time pose estimation"
 download:
