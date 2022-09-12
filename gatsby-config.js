@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Creative Machine`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://jjeongin.github.io/creative-machine`,
   },
   plugins: [
     "gatsby-plugin-image",
@@ -84,12 +84,5 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `reference`,
-    //     path: `${__dirname}/src/markdown-pages/reference`,
-    //   },
-    // },
   ],
 }
