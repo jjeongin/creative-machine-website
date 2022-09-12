@@ -3,6 +3,7 @@ module.exports = {
     title: `Creative Machine`,
     siteUrl: `https://jjeongin.github.io/creative-machine`,
   },
+  pathPrefix: "/creative-machine",
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
