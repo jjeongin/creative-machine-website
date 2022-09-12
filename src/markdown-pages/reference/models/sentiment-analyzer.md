@@ -25,12 +25,11 @@ MLLabel[] output = analyzer.predict(input);
 ```java
 SentimentAnalyzer analyzer = new SentimentAnalyzer(this);
 ```
-### Model Description
 
 ### Methods
-#### .predict(String input)
+### .predict(String input)
 
-Runs sentiment analysis on input String and returns an array of [MLLabel](../objects/ml-label.md) with two sentiment labels (Negative and Positive) and confidence scores.
+Runs sentiment analysis on input String and returns an array of [MLLabel](../objects/ml-label) with two sentiment labels (Negative and Positive) and confidence scores.
 ```java
 String input = "Machine Learning is fun.";
 
@@ -47,7 +46,7 @@ println("Sentiment: " + output[1].getLabel() + ", Confidence: " + output[1].getC
 - String input: (required) String to analyze the sentiment.
 
 *Returns*
-- MLLabel[]: An array of size 2 containing [MLLabel](../objects/ml-label.md). Each element in the array is **Negative and Positive** label with its confidence score (from 0 to 1). Confidence is higher if each sentiment is stronger.
+- MLLabel[]: An array of size 2 containing [MLLabel](../objects/ml-label). Each element in the array is **Negative and Positive** label with its confidence score (from 0 to 1). Confidence is higher if each sentiment is stronger.
 
 ## Examples
 [SentimentAnalyzerExample](https://github.com/jjeongin/ml4processing/tree/master/examples/SentimentAnalyzerExample)

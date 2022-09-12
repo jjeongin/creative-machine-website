@@ -26,12 +26,10 @@ MLPose pose = detector.predict(img);
 PoseDetector detector = new PoseDetector(this);
 ```
 
-### Model Description
-
 ### Methods
-#### .predict(PImage image)
+### .predict(PImage image)
 
-Run pose detection on [PImage](https://processing.org/reference/PImage.html) and returns an [MLPose](../objects/ml-pose.md) object.
+Run pose detection on [PImage](https://processing.org/reference/PImage.html) and returns an [MLPose](../objects/ml-pose) object.
 
 ```java
 // load input image
@@ -50,7 +48,7 @@ for (int i = 0; i < pose.getKeyPoints().size(); i++) {
 - PImage image: (required) Image to run pose detection on.
 
 *Returns*
-- [MLPose](../objects/ml-pose.md): MLPose contains an ArrayList of 17 [MLKeyPoint](../objects/ml-keypoint.md). Each keypoint represents the following body parts in order: 
+- [MLPose](../objects/ml-pose): MLPose contains an ArrayList of 17 [MLKeyPoint](../objects/ml-keypoint). Each keypoint represents the following body parts in order: 
 ```
 1. nose
 2. left eye
@@ -70,7 +68,7 @@ for (int i = 0; i < pose.getKeyPoints().size(); i++) {
 16. left ankle
 17. right ankle
 ```
-Read more at [MLPose](../objects/ml-pose.md) for how to retrieve each body part easily.
+Read more at [MLPose](../objects/ml-pose) for how to retrieve each body part easily.
 
 ## Examples
 [PoseDetectorExample](https://github.com/jjeongin/ml4processing/tree/master/examples/PoseDetectorExample)

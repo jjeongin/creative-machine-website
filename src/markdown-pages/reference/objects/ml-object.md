@@ -4,7 +4,7 @@ templateKey: "reference-page"
 ---
 
 # MLObject
-Datatype for storing detected objects for [Object Detector](../models/object-detector.md). An MLObject contains a String label, confidence score, and bounding box information (width, height, and the x and y coordinates of the upper left corner).
+Datatype for storing detected objects for [Object Detector](../models/object-detector). An MLObject contains a String label, confidence score, and bounding box information (width, height, and the x and y coordinates of the upper left corner).
 
 ## Examples
 ```java
@@ -33,4 +33,4 @@ void setup() {
 * ```getHeight()```: Returns ```float height```, the height of the bounding box.
   
 ## Used By
-[Object Detector](../models/object-detector.md)
+[Object Detector](../models/object-detector)

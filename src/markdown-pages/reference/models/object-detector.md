@@ -27,7 +27,7 @@ ObjectDetector detector = new ObjectDetector(this, modelName);
 ```
 *Parameters*
 
-String modelName: (required) Model name of one of the built-in models. Available models are the followings:
+- String modelName: (required) Model name of one of the built-in models. Available models are the followings:
 
 - 📍 SSD Models (```openimages_ssd```, ```coco_ssd```, ```voc_ssd```)
 
@@ -38,16 +38,10 @@ You can select different models by specifying the model name when creating an ob
 ObjectDetector detector = new ObjectDetector(this, "openimages_ssd");
 ```
 
-## Model Description
-### SSD (Single Shot MultiBox Detector)
-SSD is designed to enable object detection in real-time. 
-
-### YOLO ()
-
 ### Methods
-#### **.predict(PImage image, String fileName)**
+### .predict(PImage image, String fileName)
 
-Runs object detection on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject](../objects/ml-object.md). (optional) If fileName is provided, it also saves bounding box image with the specified filename.
+Runs object detection on [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLObject](../objects/ml-object). (optional) If fileName is provided, it also saves bounding box image with the specified filename.
 ```java
 // load input image
 PImage img = loadImage("data/dog_bike_car.jpeg");
@@ -63,7 +57,7 @@ MLObject[] output = detector.predict(img, "data/dog_bike_car_output.png");
 - String fileName: (optional) File name to store the output image. Should be **.png** files only. Saved under the Processing sketch directory by default, specify the subdirectory name to save under an existing directory within the sketch directory.
 
 *Returns*
-- MLObject[]: List of [MLObject](../objects/ml-object.md).
+- MLObject[]: List of [MLObject](../objects/ml-object).
 
 ## Examples
 [ObjectDetectorExample](https://github.com/jjeongin/ml4processing/tree/master/examples/ObjectDetectorExample)

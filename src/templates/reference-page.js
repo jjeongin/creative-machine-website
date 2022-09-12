@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import SideBar from "../components/SideBar"
 import {
   referenceContainer,
-  referenceContent
+  referenceSideBarContainer,
+  referenceContent,
 } from '../components/layout.module.css'
 
 
@@ -15,10 +16,12 @@ export default function referenceTemplate({ data, }) { // this prop will be inje
   return (
     <Layout>
       <div className={referenceContainer}>
-        <SideBar/>
-        <div className={referenceContent}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className={referenceSideBarContainer}>
+          <SideBar/>
+        </div>
+          <div className={referenceContent}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
       </div>
     </Layout>
   )

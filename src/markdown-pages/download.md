@@ -30,4 +30,4 @@ There are two main ways to use Creative Machine in Processing.
 
 3. Create a new Processing sketch and type ```import ml.*``` on top of your sketch file.
 
-Now you are all set! Explore [Reference](reference/tutorial.md) page for detailed instructions on how to use each model.
+Now you are all set! Explore [Reference](reference/tutorial) page for detailed instructions on how to use each model.

@@ -6,7 +6,7 @@ templateKey: "reference-page"
 # Face Detector
 Detect faces and facial landmarks on [PImage](https://processing.org/reference/PImage.html).
 
-![alt text](./../../images/face_detector_demo.png)
+![Face Detector demo](./../../images/face_detector_demo.png)
 
 ## Quick Start
 ```java
@@ -14,7 +14,7 @@ Detect faces and facial landmarks on [PImage](https://processing.org/reference/P
 FaceDetector detector = new FaceDetector(this);
 
 // load image
-PImage img = loadImage("largest_selfie.jpeg");
+PImage img = loadImage("friends.jpg");
 
 // detect pose
 MLFace[] faces = detector.predict(img);
@@ -26,17 +26,14 @@ MLFace[] faces = detector.predict(img);
 FaceDetector detector = new FaceDetector(this);
 ```
 
-### Model Description
-
-
 ### Methods
-#### .predict(PImage image)
+### .predict(PImage image)
 
-Detect faces and 5 facial landmarks from a [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLFace](../objects/ml-pose.md) object.
+Detect faces and 5 facial landmarks from a [PImage](https://processing.org/reference/PImage.html) and returns an array of [MLFace](../objects/ml-face) object.
 
 ```java
 // load input image
-PImage img = loadImage("largest_selfie.jpeg");
+PImage img = loadImage("friends.jpg");
 
 // run face detection
 MLFace[] faces = detector.predict(img);
@@ -47,11 +44,11 @@ MLFace[] faces = detector.predict(img);
     MLFace face = faces[i];
     // draw bounding box
     noFill();
-    stroke(243, 176, 255);
+    stroke(240, 121, 81);
     rect(face.getX(), face.getY(), face.getWidth(), face.getHeight());
     // draw landmarks
     noStroke();
-    fill(255, 131, 110);
+    fill(250, 255, 112);
     for (int j = 0; j < face.getKeyPoints().size(); j++) {
         MLKeyPoint keyPoint = face.getKeyPoints().get(j);
         circle(keyPoint.getX(), keyPoint.getY(), 5);
@@ -62,7 +59,7 @@ MLFace[] faces = detector.predict(img);
 - PImage image: (required) Image to run face detection on.
 
 *Returns*
-- MLFace[]: An array of [MLFace](../objects/ml-face.md). MLFace contains an ArrayList of 5 [MLKeyPoint](../objects/ml-keypoint.md). Each keypoint represents the following facial landmarks in order:
+- MLFace[]: An array of [MLFace](../objects/ml-face). MLFace contains an ArrayList of 5 [MLKeyPoint](../objects/ml-keypoint). Each keypoint represents the following facial landmarks in order:
 ```
 1. left eye
 2. right eye
@@ -70,7 +67,7 @@ MLFace[] faces = detector.predict(img);
 4. left mouth
 5. right mouth
 ```
-Read more at [MLFace](../objects/ml-face.md) for how to retrieve each facial landmark easily.
+Read more at [MLFace](../objects/ml-face) for how to retrieve each facial landmark easily.
 
 ## Examples
 [FaceDetectorExample](https://github.com/jjeongin/ml4processing/tree/master/examples/FaceDetectorExample)

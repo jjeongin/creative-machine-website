@@ -28,6 +28,6 @@ void setup() {
 * ```getConfidence()```: Returns ```float confidence``` that stores the confidence score (from 0 to 1) of the object. As the confidence score is higher, the possibility of that object is labelled correclty is higher.
   
 ## Used By
-[Image Classifier](../models/image-classifier.md)
+[Image Classifier](../models/image-classifier)
 
-[Sentiment Analyzer](../models/sentiment-analyzer.md)
+[Sentiment Analyzer](../models/sentiment-analyzer)

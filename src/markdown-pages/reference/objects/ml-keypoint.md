@@ -36,6 +36,6 @@ void draw() {
 * ```getConfidence()```: (only for MLKeyPoint in **MLPose**) Returns ```float confidence``` that stores the confidence score (from 0 to 1) of the keypoint.
 
 ## Used By
-[Face Detector](../models/face-detector.md)
+[Face Detector](../models/face-detector)
 
-[Pose Detector](../models/pose-detector.md)
+[Pose Detector](../models/pose-detector)

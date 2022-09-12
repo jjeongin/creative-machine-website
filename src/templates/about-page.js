@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Footer from "../components/Footer"
 import {
   aboutContent
 } from "../components/layout.module.css"
@@ -14,6 +15,7 @@ export default function aboutTemplate({ data, }) { // this prop will be injected
       <div className={aboutContent}
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <Footer/>
     </Layout>
   )
 }

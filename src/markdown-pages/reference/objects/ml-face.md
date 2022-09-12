@@ -4,7 +4,7 @@ templateKey: "reference-page"
 ---
 
 # MLFace
-Datatype for storing a face detected by [Face Detector](../models/face-detector.md). MLFace contains an ArrayList of [MLKeyPoint](ml-keypoint.md). If a face is detected, MLFace contains 5 keypoints for each facial landmark following the order below: 
+Datatype for storing a face detected by [Face Detector](../models/face-detector). MLFace contains an ArrayList of [MLKeyPoint](ml-keypoint). If a face is detected, MLFace contains 5 keypoints for each facial landmark following the order below: 
 ```
 1. left eye
 2. right eye
@@ -23,11 +23,22 @@ void setup() {
     PImage img = loadImage("pose_soccer.png");
     // detect faces
     MLFace[] faces = detector.predict(img);
-    
 }
 void draw() {
-    // draw eyes and the nose
-    
+  for (int i = 0; i < faces.length; i++) {
+    // get each face
+    MLFace face = faces[i];
+    // draw a bounding box
+    noFill();
+    stroke(240, 121, 81);
+    rect(face.getX(), face.getY(), face.getWidth(), face.getHeight());
+    // draw eyes and a nose
+    noStroke();
+    fill(250, 255, 112);
+    circle(face.getLeftEye(), face.getLeftEyetY(), 5);
+    circle(face.getRightEye(), face.getRightEye(), 5);
+    circle(face.getNose(), face.getNose(), 5);
+  }
 }
 ```
 
@@ -40,4 +51,4 @@ void draw() {
 * ```getRightMouth()```: Returns ```MLKeyPoint leftMouth```, the position of the right end of a mouth.
   
 ## Used By
-[Face Detector](../models/face-detector.md)
+[Face Detector](../models/face-detector)

@@ -7,6 +7,10 @@ html, body {
     font-weight: 400;
 }
 
+p {
+    line-height: 1.7; /* default line spacing */
+}
+
 .container {
     margin: 0;
     padding: 0;
@@ -21,8 +25,16 @@ h1, h2, h3, h4 {
     font-weight: normal; /* undo bold for all headings */
 }
 
-a {
-    text-decoration: none; /* remove underline for all links */
+/* a {
+    text-decoration: none;
+} */
+
+a:link {
+    color: #8684FF;
+}
+
+a:visited {
+    color: #8684FF;
 }
 
 ul {
@@ -48,17 +60,18 @@ header {
 .nav-container {
     display: flex;
     align-items: center;
-    right: 20px;
+    right: 25px; /* right padding of nav bar */
     position: relative;
 }
 
 .nav-logo {
-    left: 20px;
-    width: 200px; /* 200px for regular, */
+    left: 25px; /* left padding of nav bar */
+    width: 200px;
 }
 
 .nav-github-logo {
     width: 30px;
+
 }
 
 nav ul {
@@ -74,18 +87,21 @@ nav ul li {
 }
 
 .nav-link-text {
-    color: black;
+    color: black !important;
     text-decoration: none;
     padding: 0px 20px;
 }
 
+/* .nav-link-item a:active {
+    color: #8684FF;
+} */
+
 /* main body */
 main {
-    padding-top: 60px; /* header size */
-    padding-bottom: 120px; /* footer size */
     display: flex;
     flex-direction: column;
     z-index: 0;
+    margin-bottom: 100px; /* footer size */
 }
 
 /* footer */
@@ -94,31 +110,103 @@ footer {
     background-color: #8684FF;
     color: white;
     width: 100%;
-    height: 120px;
+    height: 150px;
+    overflow: hidden;
+    /* position: relative; */
     position: absolute;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* z-index: 0; */
+}
+
+.footer-contact {
+    width: 20%;
+    padding-left: 50px; /* footer left padding */
+}
+
+.footer-contact a {
+    color: white;
+}
+
+.footer-contact-heading {
+    font-size: 19px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footer-contact-text {
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer-project-description {
+    font-size: 14px;
+    padding-right: 50px; /* footer right padding */
 }
 
 /* ------------------------------------------------- */
 /* home page */
-.home-intro {
-    display: flex;
-    width: 100%;
-    background: rgb(175,148,234);
-    background: linear-gradient(90deg, rgba(175,148,234,0) 0%, rgba(134,132,255,1) 91%);
-    height: 100vh;
+.home-container {
+    margin: 0;
+    padding: 0;
 }
+
+.home-intro {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 58%, rgba(134,132,255,1) 200%);display: flex;
+    display: flex;
+    align-items: center;
+}
+
+.home-intro-text {
+    margin: 0;
+    padding-left: 100px;
+    font-size: calc(90px + 1.0vw);
+    line-height: 1.3 !important;
+}
+
+/* typewriter animation from https://css-tricks.com/snippets/css/typewriter-effect/ */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;  /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    border-right: .12em solid black; /* The typwriter cursor */
+    margin: 0;
+    margin-bottom: -45px;
+    animation: typing 3s steps(40, end), blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 400px; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+  }
 
 .home-intro-logo {
-    width: 300px;
+    position: relative;
+    right: 170px;
+    top: 230px;
 }
 
-.home-intro-left {
+
+/* .home-intro-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #6360ff;
     width: 100vw;
     font-weight: 900px;
 }
@@ -128,9 +216,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #8684FF; purple: 8684FF, blue: 2663FF */
     width: 50vw;
-}
+} */
 
 .home-examples {
     height: 100vh;
@@ -143,6 +230,8 @@ footer {
 .home-examples-heading {
     width: 100%;
     text-align: center;
+    font-size: 25px;
+    padding-bottom: 30px;
 }
 
 .home-examples-item-container {
@@ -159,6 +248,8 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border: black;
+    border-radius: 10px;
 }
 
 .home-examples-item-image {
@@ -175,11 +266,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #c2c1ff;
+    height: 50vh;
 }
 
-.home-download-button {
+.home-download-subtext {
+    font-size: 20px;
+}
+
+/* .home-download-button {
     width: 200px;
     height: 100px;
     font-size: medium;
@@ -187,7 +281,7 @@ footer {
     border-radius: 30px;
     background-color: #ffffff;
     color:#c2c1ff;
-}
+} */
 
 .home-code-examples {
     display: flex;
@@ -195,7 +289,32 @@ footer {
     justify-content: center;
     padding-left: 40px;
     padding-right: 40px;
+    height: 50vh;
+}
+
+/* home acknowledgement section*/
+.home-acknowledgements {
     height: 70vh;
+}
+
+.home-acknowledgements-heading {
+    padding: 40px;
+    font-size: 25px;
+}
+
+.home-acknowledgements-logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.home-gsoc-logo {
+    width: 250px;
+}
+
+.home-processing-logo {
+    width: 250px;
 }
 
 /* ------------------------------------------------- */
@@ -204,55 +323,88 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
-    padding-left: 40px;
-    padding-right: 40px;
-    /* background-color: pink; */
+    margin-top: 60px;  /* header size */
+}
+
+/* reference side bar */
+.reference-side-bar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
 
 .reference-side-bar {
-    width: 180px; /* side bar width */
-    height: 100%;
+    width: 250px; /* side bar width */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* background-color: skyblue; */
     position: fixed;
-    margin: 0;
     padding: 0;
+    margin-top: 60px;
+    top: 0;
+    left: 0;
+    bottom:0;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .side-bar-heading {
-    font-size: 1.5rem;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.side-bar-items {
+    padding: 20px;
+    /* overflow: scroll; */
 }
 
 .side-bar-sub-heading {
-    font-size: 1.2rem;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px; /* distance between border and text */
+    border-color: #bcbbf9;
+    border-bottom-style: dotted;
+}
+
+.side-bar-model-heading {
+    font-size: 17px;
 }
 
 .side-bar-index {
-    
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.side-bar-index-link {
-    font-size: 1.2rem;
+.side-bar-index a {
+    text-decoration: none;
     color: black;
+    font-size: 17px;
 }
-
+/* reference markdown content */
 .reference-content {
-    margin-left: 200px; /* side bar width */
+    margin-left: 250px; /* side bar width */
     height: 100%;
     overflow: auto;
     padding: 0px 30px;
 }
-
+/* ------------------------------------------------- */
 /* download page */
 .download-content {
+    padding-top: 60px; /* header size */
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 150px; /* footer size */
 }
-
-/* download page */
+/* ------------------------------------------------- */
+/* about page */
 .about-content {
+    padding-top: 60px; /* header size */
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 150px; /* footer size */
 }

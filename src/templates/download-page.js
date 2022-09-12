@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Footer from "../components/Footer"
 import {
   downloadContent
 } from "../components/layout.module.css"
@@ -14,6 +15,7 @@ export default function downloadTemplate({ data }) { // this prop will be inject
         <div className={downloadContent}
         dangerouslySetInnerHTML={{ __html: html }}
         />
+        <Footer/>
     </Layout>
   )
 }

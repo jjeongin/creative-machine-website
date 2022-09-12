@@ -4,7 +4,7 @@ templateKey: "reference-page"
 ---
 
 # MLPose
-Datatype for storing a pose detected by [Pose Detector](../models/pose-detector.md). MLPose contains an ArrayList of [MLKeyPoint](ml-keypoint.md). If the full pose is detected, MLPose contains 17 keypoints for each body joint following the order below: 
+Datatype for storing a pose detected by [Pose Detector](../models/pose-detector). MLPose contains an ArrayList of [MLKeyPoint](ml-keypoint). If the full pose is detected, MLPose contains 17 keypoints for each body joint following the order below: 
 ```
 1. nose
 2. left eye
@@ -71,4 +71,4 @@ void draw() {
 * ```getRightAnkle()```: Returns ```MLKeyPoint rightAnkle```, the position of a right ankle.
   
 ## Used By
-[Pose Detector](../models/pose-detector.md)
+[Pose Detector](../models/pose-detector)

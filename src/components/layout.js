@@ -9,9 +9,11 @@ import {
     navLinks,
     navLinkItem,
     navLinkText,
+    footerContact,
+    footerContactHeading,
+    footerContactText,
+    footerProjectDescription
 } from './layout.module.css'
-// import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-// deckDeckGoHighlightElement();
 
 const Layout = ({ children }) => {
     // get website title from gatsby-config.js
@@ -28,15 +30,15 @@ const Layout = ({ children }) => {
     return (
       <div className={container}>
         <title>{data.site.siteMetadata.title}</title>
+        {/* header */}
         <header>
           <Link to="/">
             <StaticImage
               className={navLogo}
-              src='../images/creative-machine-logo-purple.svg'
+              src='../images/cm-kunika-logo.svg'
               alt='Creative Machine Logo'
             />
           </Link>
-
             <nav className={navContainer}>
               <ul className={navLinks}>
                 <li className={navLinkItem}>
@@ -49,8 +51,7 @@ const Layout = ({ children }) => {
                   <Link to="/about" className={navLinkText}>About</Link>
                 </li>
               </ul>
-
-              <a href="https://github.com/jjeongin/ml4processing">
+              <a href="https://github.com/jjeongin/creative-machine">
               <StaticImage
                 className={navGithubLogo}
                 src='../images/GitHub-Mark-64px.png'
@@ -58,39 +59,12 @@ const Layout = ({ children }) => {
               />
             </a>
             </nav>
-        
         </header>
-        
-
-        {/* <nav className={navBar}>
-          <div className={navBarItem}>
-            <Link to="/">
-                <img className={navCmLogo} src="../images/icon.png" alt="Creative Machine Logo"></img>
-            </Link>
-          </div>
-          <div className={navBarItem}>
-            <Link to="/docs/reference" className={navLinkText}>Reference</Link>
-          </div>
-          <div className={navBarItem}>
-            <Link to="/about" className={navLinkText}>About</Link>
-          </div>
-          <div className={navBarItem}>
-            <Link to="https://github.com/jjeongin/ml4processing">
-                <img className={navGithubLogo} src="../images/github.png" alt="GitHub Logo"></img>
-            </Link>
-          </div>
-        </nav> */}
-        
+        {/* main body */}
         <main>
           {children}
         </main>
-
-        <footer>
-          <p>Contact</p>
-          <a href="https://github.com/jjeongin/ml4processing">GitHub</a>
-          <a href="">Email</a>
-          <p>Creative Machine is developed by Jeongin Lee as a Google Summer of Code 2022 project under the guidance of Andres Colubri and Daniel Shiffman.</p>
-        </footer>
+        
       </div>
     )
   }

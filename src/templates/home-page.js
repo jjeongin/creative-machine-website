@@ -1,10 +1,13 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Footer from "../components/Footer"
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
   homeContainer,
   homeIntro,
+  homeIntroText,
+  typewriter,
   homeIntroLogo,
   homeIntroLeft,
   homeIntroRight,
@@ -16,38 +19,35 @@ import {
   homeExamplesItemImage,
   homeExamplesItemDescription,
   homeDownload,
-  homeDownloadButton,
+  homeDownloadSubtext,
   homeCodeExamples,
-  homeAcknowledgements
+  homeAcknowledgements,
+  homeAcknowledgementsHeading,
+  homeAcknowledgementsLogoContainer,
+  homeGsocLogo,
+  homeProcessingLogo
 } from "../components/layout.module.css"
 
 
 export default function homeTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-
-  // const gsocLogo = getImage(frontmatter.acknowledgements.gsocLogo.childImageSharp.gatsbyImageData)
-
   return (
     <Layout>
       <div className={homeContainer}>
         {/* Section: Introduction & Welcome Message */}
         <section className={homeIntro}>
-          <div className={homeIntroLeft}>
-            {/* <h1>{frontmatter.intro.mainText}</h1> */}
-            <h2>{frontmatter.intro.subText}</h2>
-          </div>
-          <div className={homeIntroRight}>
-            <StaticImage
-                className={homeIntroLogo}
-                src='../images/cm-kunika-logo-horizontal-white.svg'
-                alt='Creative Machine Logo'
-              />
-          </div>
+          <p className={homeIntroText}>Get <p className={typewriter}>Creative</p> with <br/> Machine Learning <br/> in Processing.</p>
+          <StaticImage
+            className={homeIntroLogo}
+            width="170px"
+            src='../images/processing-logo.svg'
+            alt='Processing Logo'
+          />
         </section>
         {/* Section: Examples */}
         <section className={homeExamples}>
-          <h1 className={homeExamplesHeading}>Examples</h1>
+          <h1 className={homeExamplesHeading}>Experiment with Machine Learning in Processing.</h1>
           <div className={homeExamplesItemContainer}>
             {frontmatter.examples.map(e => (
               <div className={homeExamplesItem}>
@@ -61,24 +61,32 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
             ))}
           </div>
         </section>
-        {/* Section: Download Button */}
-        <section className={homeDownload}>
-            <h1>{frontmatter.download.mainText}</h1>
-            <a href="https://github.com/jjeongin/ml4processing">
-              <button className={homeDownloadButton}>{frontmatter.download.subText}</button>
-            </a>
-        </section>
         {/* Section: Example Code Snippet */}
         <section
           className={homeCodeExamples}
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        {/* Section: Download Instruction */}
+        <section className={homeDownload}>
+            <h1>{frontmatter.download.mainText}</h1>
+            <Link to="/download"><p className={homeDownloadSubtext}>{frontmatter.download.subText}</p></Link>
+        </section>
+        {/* Section: Acknowledgements */}
         <section className={homeAcknowledgements}>
-            {/* <GatsbyImage
-              image={frontmatter.acknowledgements.gsocLogo.childImageSharp.gatsbyImageData}
-            /> */}
+          <h1 className={homeAcknowledgementsHeading}>This project has been supported by</h1>
+            <div className={homeAcknowledgementsLogoContainer}>
+              <StaticImage
+                className={homeGsocLogo}
+                src='../images/gsoc-logo-big.png'
+              />
+              <StaticImage
+                className={homeProcessingLogo}
+                src='../images/processing-logo.svg'
+              />
+            </div>
         </section>
       </div>
+      <Footer/>
     </Layout>
   )
 }
@@ -105,13 +113,6 @@ export const pageQuery = graphql`
                 download {
                     mainText
                     subText
-                }
-                acknowledgements {
-                  gsocLogo {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
                 }
             }
         }

@@ -25,15 +25,13 @@ MLLabel[] output = classifier.predict(img);
 ```java
 ImageClassifier classifier = new ImageClassifier(this, modelName);
 ```
-#### Parameters
-String modeName: (required) Model name of one of the built-in models ("MobileNet" or "Darknet").
-
-### Model Description
+*Parameters*
+- String modeName: (required) Model name of one of the built-in models ("MobileNet" or "Darknet").
 
 ### Methods
-#### .predict(PImage image)
+### .predict(PImage image)
 
-Run image classification on [PImage](https://processing.org/reference/PImage.html) and return an array of [MLLabel](../objects/ml-label.md) with image label and confidence score.
+Run image classification on [PImage](https://processing.org/reference/PImage.html) and return an array of [MLLabel](../objects/ml-label) with image label and confidence score.
 ```java
 // load input image
 PImage img = loadImage("data/bird.jpeg");
@@ -49,7 +47,7 @@ println("Label: " + output[0].getLabel() + ", Confidence: " + output[0].getConfi
 - PImage image: (required) Image with an object to be classified.
 
 *Returns*
-- MLLabel[]: List of [MLLabel](../objects/ml-label.md). Contains top K (default K = 5) labels and confidence scores.
+- MLLabel[]: List of [MLLabel](../objects/ml-label). Contains top K (default K = 5) labels and confidence scores.
 
 ## Examples
 [ImageClassifierExample](https://github.com/jjeongin/ml4processing/tree/master/examples/ImageClassifierExample)
