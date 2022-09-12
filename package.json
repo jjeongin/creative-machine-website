@@ -1,8 +1,8 @@
 {
-  "name": "machine-learning-for-processing",
+  "name": "creative-machine",
   "version": "1.0.0",
   "private": true,
-  "description": "machine-learning-for-processing",
+  "description": "creative-machine-library-for-processing",
   "author": "Jeongin Lee",
   "keywords": [
     "gatsby"
