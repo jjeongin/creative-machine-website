@@ -21,7 +21,7 @@ There are two main ways to use Creative Machine in Processing.
 
 1. Download the latest release of Creative Machine from the below link.
 
-    [Download Creative Machine 1.0]()
+    [Download Creative Machine](https://github.com/jjeongin/creative-machine/releases/download/v1.0.0/creative_machine.zip)
 
 2. Unzip the .zip file and move the library folder under Processing > libraries directory.
 
