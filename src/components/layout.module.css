@@ -25,10 +25,6 @@ h1, h2, h3, h4 {
     font-weight: normal; /* undo bold for all headings */
 }
 
-/* a {
-    text-decoration: none;
-} */
-
 a:link {
     color: #8684FF;
 }
@@ -101,7 +97,6 @@ main {
     display: flex;
     flex-direction: column;
     z-index: 0;
-    margin-bottom: 100px; /* footer size */
 }
 
 /* footer */
@@ -149,15 +144,16 @@ footer {
 /* ------------------------------------------------- */
 /* home page */
 .home-container {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;  /* footer size */
 }
 
 .home-intro {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,0) 58%, rgba(134,132,255,1) 200%);display: flex;
     display: flex;
@@ -167,8 +163,42 @@ footer {
 .home-intro-text {
     margin: 0;
     padding-left: 100px;
-    font-size: calc(90px + 1.0vw);
+    font-size: calc(60px + 2.0vw);
     line-height: 1.3 !important;
+}
+
+/* .home-intro-text-1 {
+    margin: 0;
+    padding-left: 100px;
+    font-size: calc(60px + 2.0vw);
+    line-height: 1.3 !important;
+}
+
+.home-intro-text-2 {
+    margin: 0;
+    padding-left: 100px;
+    font-size: calc(60px + 2.0vw);
+    line-height: 1.3 !important;
+}
+
+.home-intro-text-3 {
+    margin: 0;
+    padding-left: 100px;
+    font-size: calc(60px + 2.0vw);
+    line-height: 1.3 !important;
+} */
+
+.home-intro-logo {
+    position: relative;
+    width: calc(130px + 2.0vw);
+    right: 170px;
+    top: 230px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .home-intro-text {
+        /* font-size: 80px; */
+    }
 }
 
 /* typewriter animation from https://css-tricks.com/snippets/css/typewriter-effect/ */
@@ -182,45 +212,22 @@ footer {
     animation: typing 3s steps(40, end), blink-caret .5s step-end infinite;
 }
 
-/* The typing effect */
+/* typewriter typing effect */
 @keyframes typing {
     from { width: 0 }
     to { width: 400px; }
 }
 
-/* The typewriter cursor effect */
+/* typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: black }
-  }
-
-.home-intro-logo {
-    position: relative;
-    right: 170px;
-    top: 230px;
 }
 
-
-/* .home-intro-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100vw;
-    font-weight: 900px;
-}
-
-.home-intro-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-} */
-
+/* home examples section*/
 .home-examples {
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,40 +268,39 @@ footer {
     
 }
 
-.home-download {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-}
-
-.home-download-subtext {
-    font-size: 20px;
-}
-
-/* .home-download-button {
-    width: 200px;
-    height: 100px;
-    font-size: medium;
-    border: 0;
-    border-radius: 30px;
-    background-color: #ffffff;
-    color:#c2c1ff;
-} */
-
+/* home code examples section*/
 .home-code-examples {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 40px;
     padding-right: 40px;
-    height: 50vh;
+    min-height: 50vh;
+}
+
+/* home download section*/
+.home-download {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    min-height: 50vh;
+}
+
+.home-download-heading {
+    text-align: center;
+}
+
+.home-download-subtext {
+    text-align: center;
+    font-size: 20px;
 }
 
 /* home acknowledgement section*/
 .home-acknowledgements {
-    height: 70vh;
+    padding-bottom: 40px; /* little gap from footer */
 }
 
 .home-acknowledgements-heading {
@@ -304,9 +310,9 @@ footer {
 
 .home-acknowledgements-logo-container {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding-top: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .home-gsoc-logo {
@@ -323,15 +329,32 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
-    margin-top: 60px;  /* header size */
+    padding-top: 60px;  /* header size */
 }
 
 /* reference side bar */
-.reference-side-bar-container {
+/* .reference-side-bar-container {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
+    display: block;
+} */
+
+.show-side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: block; /* show the side bar */
+}
+
+.hide-side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: none; /* hide the side bar */
 }
 
 .reference-side-bar {
@@ -346,6 +369,18 @@ footer {
     bottom:0;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+.reference-side-bar-button {
+
+}
+
+.reference-side-bar-icon {
+    width: 150px; 
+    height: 150px;
+    vertical-align: middle;
+    fill: #8684FF;
+    overflow: hidden;
 }
 
 .side-bar-heading {
@@ -399,6 +434,7 @@ footer {
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 150px; /* footer size */
+    margin-bottom: 30px; /* little gap from footer */
 }
 /* ------------------------------------------------- */
 /* about page */
@@ -407,4 +443,28 @@ footer {
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 150px; /* footer size */
+}
+
+
+/* ------------------------------------------------- */
+/* media query */
+/* mobile */ 
+@media only screen and (max-width: 480px) {
+
+    /* reference page */
+    /* .reference-side-bar-container {
+        
+    } */
+}
+
+/* tablets */
+@media only screen and (max-width: 768px) {
+    /* reference page */
+    /* .reference-side-bar-container {
+        display: none;
+    } */
+    .reference-content { 
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }

@@ -7,18 +7,19 @@ import {
   homeContainer,
   homeIntro,
   homeIntroText,
+  homeIntroText1,
+  homeIntroText2,
+  homeIntroText3,
   typewriter,
   homeIntroLogo,
-  homeIntroLeft,
-  homeIntroRight,
   homeExamples,
-  homeExamplesContainer,
   homeExamplesHeading,
   homeExamplesItemContainer,
   homeExamplesItem,
   homeExamplesItemImage,
   homeExamplesItemDescription,
   homeDownload,
+  homeDownloadHeading,
   homeDownloadSubtext,
   homeCodeExamples,
   homeAcknowledgements,
@@ -37,10 +38,13 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
       <div className={homeContainer}>
         {/* Section: Introduction & Welcome Message */}
         <section className={homeIntro}>
-          <p className={homeIntroText}>Get <p className={typewriter}>Creative</p> with <br/> Machine Learning <br/> in Processing.</p>
+          {/* <p className={homeIntroText1}>Get <p className={typewriter}>Creative</p> with </p>
+          <p className={homeIntroText2}>Machine Learning</p> 
+          <p className={homeIntroText3}>in Processing.</p> */}
+
+          <p className={homeIntroText}>Get <p className={typewriter}>Creative</p> with <br/> Machine Learning <br/> in Processing. </p>
           <StaticImage
             className={homeIntroLogo}
-            width="170px"
             src='../images/processing-logo.svg'
             alt='Processing Logo'
           />
@@ -68,12 +72,12 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
         />
         {/* Section: Download Instruction */}
         <section className={homeDownload}>
-            <h1>{frontmatter.download.mainText}</h1>
+            <h1 className={homeDownloadHeading}>{frontmatter.download.mainText}</h1>
             <Link to="/download"><p className={homeDownloadSubtext}>{frontmatter.download.subText}</p></Link>
         </section>
         {/* Section: Acknowledgements */}
         <section className={homeAcknowledgements}>
-          <h1 className={homeAcknowledgementsHeading}>This project has been supported by</h1>
+          <h1 className={homeAcknowledgementsHeading}>This project is supported by</h1>
             <div className={homeAcknowledgementsLogoContainer}>
               <StaticImage
                 className={homeGsocLogo}
