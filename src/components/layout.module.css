@@ -333,13 +333,13 @@ footer {
 }
 
 /* reference side bar */
-/* .reference-side-bar-container {
+.reference-side-bar-container {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     display: block;
-} */
+}
 
 .show-side-bar {
     position: absolute;
@@ -452,17 +452,17 @@ footer {
 @media only screen and (max-width: 480px) {
 
     /* reference page */
-    /* .reference-side-bar-container {
+    .reference-side-bar-container {
         
-    } */
+    }
 }
 
 /* tablets */
 @media only screen and (max-width: 768px) {
     /* reference page */
-    /* .reference-side-bar-container {
+    .reference-side-bar-container {
         display: none;
-    } */
+    }
     .reference-content { 
         margin-left: 20px;
         margin-right: 20px;
