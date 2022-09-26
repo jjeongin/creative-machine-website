@@ -147,17 +147,17 @@ footer {
 }
 
 .footer-contact-heading {
-    font-size: 19px;
+    font-size: 20px;
     margin: 0;
 }
 
 .footer-contact-text {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 }
 
 .footer-project-description-text {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* ------------------------------------------------- */
@@ -480,6 +480,19 @@ footer {
 
 /* ------------------------------------------------- */
 /* media query */
+@media only screen and (max-width: 1350px) {
+    /* footer */
+    .footer-contact-heading {
+        font-size: 18px;
+    }
+    .footer-contact-text {
+        font-size: 16px;
+    }
+    .footer-project-description-text {
+        font-size: 14px;
+    }
+}
+
 @media only screen and (max-width: 1090px) {
     .home-intro-text {
         font-size: 90px;
