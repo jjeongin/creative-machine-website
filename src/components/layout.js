@@ -3,16 +3,15 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import {
     container,
+    headerMobile,
     navLogo,
     navGithubLogo,
     navContainer,
     navLinks,
     navLinkItem,
     navLinkText,
-    footerContact,
-    footerContactHeading,
-    footerContactText,
-    footerProjectDescription
+    navExpandButton,
+    navExpandIcon,
 } from './layout.module.css'
 
 const Layout = ({ children }) => {
@@ -32,39 +31,51 @@ const Layout = ({ children }) => {
         <title>{data.site.siteMetadata.title}</title>
         {/* header */}
         <header>
-          <Link to="/">
-            <StaticImage
-              className={navLogo}
-              src='../images/cm-kunika-logo.svg'
-              alt='Creative Machine Logo'
-            />
-          </Link>
-            <nav className={navContainer}>
-              <ul className={navLinks}>
-                <li className={navLinkItem}>
-                  <Link to="/download" className={navLinkText}>Download</Link>
-                </li>
-                <li className={navLinkItem}>
-                  <Link to="/reference/tutorial" className={navLinkText}>Reference</Link>
-                </li>
-                <li className={navLinkItem}>
-                  <Link to="/about" className={navLinkText}>About</Link>
-                </li>
-              </ul>
-              <a href="https://github.com/jjeongin/creative-machine">
+          <div className={headerMobile}>
+            {/* creative machine logo */}
+            <Link to="/">
+              <StaticImage
+                className={navLogo}
+                src='../images/cm-kunika-logo.svg'
+                alt='Creative Machine Logo'
+              />
+            </Link>
+            {/* button to expand the navigation bar when clicked */}
+            <button className={navExpandButton}>
+              <StaticImage
+                  className={navExpandIcon}
+                  src='../images/nav-expand-icon.svg'
+                  alt='Navigation Bar Expand Icon'
+                />
+            </button>
+          </div>
+          {/* navigation bar */}
+          <nav className={navContainer}>
+            <ul className={navLinks}>
+              <li className={navLinkItem}>
+                <Link to="/download" className={navLinkText}>Download</Link>
+              </li>
+              <li className={navLinkItem}>
+                <Link to="/reference/tutorial" className={navLinkText}>Reference</Link>
+              </li>
+              <li className={navLinkItem}>
+                <Link to="/about" className={navLinkText}>About</Link>
+              </li>
+            </ul>
+            {/* github logo */}
+            <a href="https://github.com/jjeongin/creative-machine">
               <StaticImage
                 className={navGithubLogo}
                 src='../images/GitHub-Mark-64px.png'
                 alt='GitHub Logo'
               />
             </a>
-            </nav>
+          </nav>
         </header>
-        {/* main body */}
+        {/* main body container */}
         <main>
           {children}
         </main>
-        
       </div>
     )
   }
