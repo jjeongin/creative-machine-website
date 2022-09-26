@@ -374,6 +374,7 @@ footer {
     position: fixed;
     padding: 0;
     margin-top: 60px;
+    margin-left: 30px;
     top: 0;
     left: 0;
     bottom:0;
@@ -382,15 +383,37 @@ footer {
 }
 
 .reference-side-bar-button {
-
+    position: fixed;
+    width: 260px; /* side bar width - scroll bar width */
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
 }
 
 .reference-side-bar-icon {
-    width: 150px; 
-    height: 150px;
+    width: 30px;
+    height: 30px;
+    padding-left: 7px;
+    padding-bottom: 7px;
     vertical-align: middle;
-    fill: #8684FF;
+    fill: #8684FF; /* icon color */
     overflow: hidden;
+    z-index: 15; /* icon on top of blur */
+}
+
+.reference-side-bar-icon:hover {
+    opacity: 50%;
+}
+
+.reference-side-bar-icon-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: 90%;
 }
 
 .side-bar-heading {
@@ -402,7 +425,6 @@ footer {
 
 .side-bar-items {
     padding: 20px;
-    /* overflow: scroll; */
 }
 
 .side-bar-sub-heading {
@@ -432,7 +454,7 @@ footer {
 }
 /* reference markdown content */
 .reference-content {
-    margin-left: 250px; /* side bar width */
+    margin-left: 280px; /* side bar width */
     height: 100%;
     overflow: auto;
     padding: 0px 30px;
@@ -624,6 +646,9 @@ footer {
     .reference-content { 
         margin-left: 20px;
         margin-right: 20px;
+    }
+    .reference-side-bar-button {
+        width: 40px;
     }
 }
 
