@@ -38,10 +38,6 @@ export default function homeTemplate({ data, }) { // this prop will be injected 
       <div className={homeContainer}>
         {/* Section: Introduction & Welcome Message */}
         <section className={homeIntro}>
-          {/* <p className={homeIntroText1}>Get <p className={typewriter}>Creative</p> with </p>
-          <p className={homeIntroText2}>Machine Learning</p> 
-          <p className={homeIntroText3}>in Processing.</p> */}
-
           <p className={homeIntroText}>Get <p className={typewriter}>Creative</p> with <br/> Machine Learning <br/> in Processing. </p>
           <StaticImage
             className={homeIntroLogo}
