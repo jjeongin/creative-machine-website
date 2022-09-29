@@ -6,7 +6,8 @@ import {
     headerMobile,
     navLogo,
     navGithubLogo,
-    navContainer,
+    showNavContainer,
+    hideNavContainer,
     navLinks,
     navLinkItem,
     navLinkText,
@@ -25,7 +26,14 @@ const Layout = ({ children }) => {
         }
       }
     `)
-  
+    // function to show and hide nav bar on tablet & mobile screens
+    const [navContainerState, setState] = React.useState(hideNavContainer); // hide nav bar initially
+    const showOrHideHeader = () => {
+      if (navContainerState == showNavContainer) // hide nav bar
+        setState(hideNavContainer);
+      else // show nav bar
+        setState(showNavContainer);
+    }
     return (
       <div className={container}>
         <title>{data.site.siteMetadata.title}</title>
@@ -41,7 +49,7 @@ const Layout = ({ children }) => {
               />
             </Link>
             {/* button to expand the navigation bar when clicked */}
-            <button className={navExpandButton}>
+            <button className={navExpandButton} onClick={showOrHideHeader}>
               <StaticImage
                   className={navExpandIcon}
                   src='../images/nav-expand-icon.svg'
@@ -50,7 +58,7 @@ const Layout = ({ children }) => {
             </button>
           </div>
           {/* navigation bar */}
-          <nav className={navContainer}>
+          <nav className={navContainerState}>
             <ul className={navLinks}>
               <li className={navLinkItem}>
                 <Link to="/download" className={navLinkText}>Download</Link>
