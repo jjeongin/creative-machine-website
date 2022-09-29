@@ -437,6 +437,7 @@ footer {
     height: 100%;
     overflow: auto;
     padding: 0px 30px;
+    z-index: -1;
 }
 /* ------------------------------------------------- */
 /* download page */
