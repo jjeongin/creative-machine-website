@@ -30,7 +30,7 @@ import {
 } from "../components/layout.module.css"
 
 
-export default function homeTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
+export default function HomeTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (

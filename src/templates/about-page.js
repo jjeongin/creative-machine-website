@@ -6,7 +6,7 @@ import {
   aboutContent
 } from "../components/layout.module.css"
 
-export default function aboutTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
+export default function AboutTemplate({ data, }) { // this prop will be injected by the GraphQL query below.
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
 
