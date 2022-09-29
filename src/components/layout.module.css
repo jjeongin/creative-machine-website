@@ -352,47 +352,13 @@ footer {
     position: fixed;
     padding: 0;
     margin-top: 60px;
-    margin-left: 30px;
+    margin-left: 10px;
     top: 0;
     left: 0;
     bottom:0;
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: white;
-}
-
-.reference-side-bar-button {
-    position: fixed;
-    width: 260px; /* side bar width - scroll bar width */
-    left: 0;
-    bottom: 0;
-    z-index: 10;
-    display: flex;
-}
-
-.reference-side-bar-icon {
-    width: 30px;
-    height: 30px;
-    padding-left: 7px;
-    padding-bottom: 7px;
-    vertical-align: middle;
-    fill: #8684FF; /* icon color */
-    overflow: hidden;
-    z-index: 15; /* icon on top of blur */
-}
-
-.reference-side-bar-icon:hover {
-    opacity: 50%;
-}
-
-.reference-side-bar-icon-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: white;
-    opacity: 90%;
 }
 
 .side-bar-heading {
@@ -644,8 +610,39 @@ footer {
         margin-left: 20px;
         margin-right: 20px;
     }
+    .reference-side-bar {
+        margin-left: 30px;
+    }
     .reference-side-bar-button {
+        position: fixed;
         width: 40px;
+        /* width: 260px; */ /* side bar width - scroll bar width */
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        display: flex;
+    }
+    .reference-side-bar-icon {
+        width: 30px;
+        height: 30px;
+        padding-left: 7px;
+        padding-bottom: 7px;
+        vertical-align: middle;
+        fill: #8684FF; /* icon color */
+        overflow: hidden;
+        z-index: 15; /* icon on top of blur */
+    }
+    .reference-side-bar-icon:hover {
+        opacity: 50%;
+    }
+    .reference-side-bar-icon-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        opacity: 90%;
     }
 }
 
