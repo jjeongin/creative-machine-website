@@ -308,7 +308,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 .home-gsoc-logo {
@@ -594,6 +593,10 @@ footer {
     }
     .home-download-subtext {
         font-size: 16px;
+    }
+    .home-acknowledgements-logo-container {
+        flex-direction: column;
+        height: 350px;
     }
     .home-gsoc-logo {
         width: 150px;
