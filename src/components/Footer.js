@@ -4,7 +4,6 @@ import {
     footerContact,
     footerContactHeading,
     footerContactText,
-    footerProjectDescription,
     footerProjectDescriptionText,
 } from './layout.module.css'
 
