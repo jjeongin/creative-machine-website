@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
     // function to show and hide nav bar on tablet & mobile screens
     const [navContainerState, setState] = React.useState(hideNavContainer); // hide nav bar initially
     const showOrHideHeader = () => {
-      if (navContainerState == showNavContainer) // hide nav bar
+      if (navContainerState === showNavContainer) // hide nav bar
         setState(hideNavContainer);
       else // show nav bar
         setState(showNavContainer);

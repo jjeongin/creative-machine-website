@@ -106,14 +106,6 @@ header {
     display: none; /* only appears in smaller screens */
 }
 
-/* .nav-expand-button:hover .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    position: static;
-    padding: 0;
-} */
-
 .nav-expand-icon {
     width: 30px;
     margin-right: 25px; /* right gap */
@@ -358,6 +350,7 @@ footer {
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: white;
+    z-index: 20;
 }
 
 .side-bar-heading {
@@ -402,7 +395,7 @@ footer {
     height: 100%;
     overflow: auto;
     padding: 0px 30px;
-    z-index: -1;
+    z-index: 0;
 }
 /* ------------------------------------------------- */
 /* download page */
@@ -421,7 +414,6 @@ footer {
     padding-right: 40px;
     padding-bottom: 150px; /* footer size */
 }
-
 
 /* ------------------------------------------------- */
 /* media query */
@@ -614,7 +606,7 @@ footer {
         margin-right: 20px;
     }
     .reference-side-bar {
-        margin-left: 30px;
+        margin-left: 40px;
     }
     .reference-side-bar-button {
         position: fixed;
@@ -633,20 +625,22 @@ footer {
         vertical-align: middle;
         fill: #8684FF; /* icon color */
         overflow: hidden;
-        z-index: 15; /* icon on top of blur */
+        z-index: 100; /* icon on top of blur */
     }
     .reference-side-bar-icon:hover {
         opacity: 50%;
     }
-    .reference-side-bar-icon-background {
+    /* .reference-side-bar-icon-background {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: white;
         opacity: 90%;
-    }
+        width: 260px;
+        background-color: white;
+        z-index: 100;
+    } */
 }
 
 /* mobile */ 

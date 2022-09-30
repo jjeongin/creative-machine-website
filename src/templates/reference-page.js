@@ -21,7 +21,7 @@ export default function ReferenceTemplate({ data, }) { // this prop will be inje
   // function to show and hide side bar on tablet & mobile screens
   const [sideBarState, setState] = React.useState(hideSideBar); // hide nav bar initially
   const showOrHideSideBar = () => {
-    if (sideBarState == showSideBar) // hide nav bar
+    if (sideBarState === showSideBar) // hide nav bar
       setState(hideSideBar);
     else // show nav bar
       setState(showSideBar);
