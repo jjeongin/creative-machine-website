@@ -586,11 +586,11 @@ footer {
         padding: 30px 40px;
     }
     .home-examples-item-image {
-        width: 200px; /* resize images */
-        height: 200px;
+        width: 250px; /* resize images */
+        height: 250px;
     }
     .home-examples-item-description {
-        font-size: 14px;
+        font-size: 16px;
     }
     .home-download-subtext {
         font-size: 16px;
