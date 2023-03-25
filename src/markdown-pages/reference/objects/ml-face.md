@@ -35,9 +35,9 @@ void draw() {
     // draw eyes and a nose
     noStroke();
     fill(250, 255, 112);
-    circle(face.getLeftEye(), face.getLeftEyetY(), 5);
-    circle(face.getRightEye(), face.getRightEye(), 5);
-    circle(face.getNose(), face.getNose(), 5);
+    circle(face.getLeftEye().getX(), face.getLeftEye().getY(), 5);
+    circle(face.getRightEye().getX(), face.getRightEye().getY(), 5);
+    circle(face.getNose().getX(), face.getNose().getY(), 5);
   }
 }
 ```

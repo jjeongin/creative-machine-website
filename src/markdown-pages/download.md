@@ -7,7 +7,7 @@ templateKey: "download-page"
 
 There are two main ways to use Creative Machine in Processing.
 
-### Option 1: Downlaod from Processing application.
+### Option 1: Download from Processing application.
 
 1. Start your Processing application and go to Sketch > Import Library > Manage Libraries...
 
